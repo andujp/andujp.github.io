@@ -327,3 +327,35 @@
   .void-v2 .impact-pulse{display:none}
 }
 
+
+/* VERSION 8: resume-focused layout and native mobile scrolling */
+.inside-mark{font:500 12px var(--mono);letter-spacing:.16em;white-space:nowrap;color:#d6e7ed;text-align:left}
+.inside-mark:hover{color:#fff}
+.inside-mark .mark-short{display:none}
+.resume-extras{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin:43px 0 12px}
+.resume-extra{padding:23px;border:1px solid #7993a32c;background:#ffffff06;min-width:0}
+.resume-extra p{font-size:13px;line-height:1.9;color:#a9b8c2;margin:12px 0 0}
+.resume-extra strong{color:#e0e9ee;font-weight:500}
+.experience-body{min-width:0;overflow-wrap:anywhere}
+.experience-topline{gap:10px}
+.modal-project-link{display:inline-block;margin:23px 0 8px;font:11px var(--mono);letter-spacing:.08em;color:#c9e9f7;text-decoration:none;border-bottom:1px solid #749caf;padding-bottom:7px}
+.modal-project-link[hidden]{display:none}
+/* The scrolling surface must own vertical touch gestures; 3D dragging must not steal them. */
+.room-face.is-current .face-scroller{overflow-y:auto;-webkit-overflow-scrolling:touch;touch-action:pan-y;overscroll-behavior-y:contain}
+.face-scroller{max-height:100%;min-height:0}
+@media(max-width:800px){
+  .room-stage{touch-action:pan-y}
+  .room-face{touch-action:pan-y}
+  .face-scroller{position:relative;z-index:2;height:100%;overflow-y:auto;-webkit-overflow-scrolling:touch;touch-action:pan-y}
+  .face-content{min-height:100%;height:auto;padding-bottom:130px}
+  .resume-extras{grid-template-columns:1fr;gap:12px;margin-top:25px}
+  .resume-extra{padding:18px}
+}
+@media(max-width:560px){
+  .inside-mark{font-size:12px;letter-spacing:.11em}
+  .inside-mark .mark-long{display:none}
+  .inside-mark .mark-short{display:inline}
+  .experience-body h3{font-size:clamp(20px,6vw,25px);line-height:1.2}
+  .experience-entry{gap:9px;grid-template-columns:25px minmax(0,1fr)}
+  .face-content{padding-bottom:145px}
+}
