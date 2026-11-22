@@ -25,11 +25,12 @@ const PROJECTS = {
     description: 'A UC Berkeley Data Discovery student collaboration investigating the identification and evaluation of group-work behaviors from meeting transcripts. The work involves behavior definitions, contextual annotations, evaluation procedures, and consideration of how useful feedback should be presented.',
     tags: ['Research', 'Python', 'Human-centered AI', 'Evaluation']
   },
-  ants: {
-    label: 'COURSEWORK · 2026',
-    title: 'Ants vs. SomeBees',
-    description: 'A strategy simulation project from UC Berkeley CS 61A. Implementing interacting insect types and game rules is a practical exercise in Python object-oriented design, inheritance, state changes, and debugging.',
-    tags: ['Python', 'OOP', 'CS 61A']
+  trading: {
+    label: 'PYTHON · IN PROGRESS',
+    title: 'Algorithmic Trading Platform',
+    description: 'An in-progress Python financial data pipeline using yfinance to retrieve, clean, and standardize historical market data. It validates missing columns, duplicate records, chronological ordering, and inconsistent structures, with automated pytest tests for retrieval and preprocessing.',
+    tags: ['Python', 'yfinance', 'pytest', 'Data validation'],
+    url: 'https://github.com/andujp/algorithmic-trading-platform'
   }
 };
 
@@ -389,7 +390,7 @@ navLinks.forEach(button => button.addEventListener('click', () => gotoRoom(Numbe
 // Buttons, interactive demos, and text remain normal DOM elements.
 const INTERACTIVE = 'button, a, input, textarea, select, canvas, dialog, label';
 stage.addEventListener('pointerdown', event => {
-  if (!inside || transitioning || event.button !== 0 || event.target.closest(INTERACTIVE)) return;
+  if (!inside || transitioning || event.button !== 0 || event.pointerType === 'touch' || event.target.closest(INTERACTIVE)) return;
   drag = { x: event.clientX, y: event.clientY, moved: false };
   try { stage.setPointerCapture(event.pointerId); } catch (_) {}
 });
@@ -419,6 +420,27 @@ function finishGesture(event, cancelled = false) {
 stage.addEventListener('pointerup', event => finishGesture(event));
 stage.addEventListener('pointercancel', event => finishGesture(event, true));
 stage.addEventListener('pointerleave', event => { if (drag && event.buttons === 0) finishGesture(event, true); });
+
+// On touchscreens, keep vertical scrolling native. A clearly horizontal swipe
+// still changes the room, but never captures a touch or prevents scrolling.
+let touchStart = null;
+stage.addEventListener('touchstart', event => {
+  if (!inside || transitioning || event.touches.length !== 1 || event.target.closest(INTERACTIVE)) {
+    touchStart = null;
+    return;
+  }
+  const t = event.touches[0];
+  touchStart = {x:t.clientX, y:t.clientY};
+}, {passive:true});
+stage.addEventListener('touchend', event => {
+  if (!touchStart || !inside || transitioning || event.changedTouches.length === 0) return;
+  const t = event.changedTouches[0];
+  const dx = t.clientX - touchStart.x;
+  const dy = t.clientY - touchStart.y;
+  touchStart = null;
+  if (Math.abs(dx) > 85 && Math.abs(dx) > Math.abs(dy) * 2.2) rotateBy(dx < 0 ? 1 : -1);
+}, {passive:true});
+stage.addEventListener('touchcancel', () => {touchStart = null;}, {passive:true});
 
 // Normal scrolling is preserved within a room. At its top or bottom, wheel
 // input rotates to an adjacent room, like crossing a wall of the cube.
@@ -463,6 +485,9 @@ document.querySelectorAll('[data-project]').forEach(button => button.addEventLis
     span.textContent = tag;
     return span;
   }));
+  const externalLink = document.querySelector('#modalProjectLink');
+  externalLink.hidden = !project.url;
+  if (project.url) externalLink.href = project.url;
   projectDialog.showModal();
 }));
 document.querySelector('#closeDialog').addEventListener('click', () => projectDialog.close());
