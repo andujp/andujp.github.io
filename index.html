@@ -64,7 +64,7 @@
   <!-- INSIDE THE CUBE: these four entire page-sized surfaces are actual 3D faces. -->
   <div id="portfolio" class="inside-view" aria-label="Portfolio chambers">
     <header class="inside-header">
-      <button class="inside-mark" id="homeMark" type="button" aria-label="Zoom out to the cube">AU<span>✳</span></button>
+      <button class="inside-mark" id="homeMark" type="button" aria-label="Zoom out to the cube"><span class="mark-long">ALEXANDRU UMBRESI</span><span class="mark-short">A. UMBRESI</span></button>
       <nav class="inside-navigation" aria-label="Portfolio sections">
         <button type="button" class="nav-link is-active" data-goto="0" aria-current="page">00 / ABOUT</button>
         <button type="button" class="nav-link" data-goto="1">01 / EXPERIENCE</button>
@@ -74,7 +74,7 @@
       <button id="exitButton" class="exit-button" type="button"><span aria-hidden="true">↖</span> ZOOM OUT</button>
     </header>
 
-    <div id="roomStage" class="room-stage" tabindex="0" aria-label="3D rotating portfolio. Use arrow keys, drag left or right, or select a section in the navigation.">
+    <div id="roomStage" class="room-stage" tabindex="0" aria-label="3D rotating portfolio. Scroll vertically to read each room; use navigation or horizontal gestures to change chambers.">
       <div class="room-shell" id="roomShell">
         <!-- Face 00: about -->
         <section class="room-face room-about is-current" data-room="0" aria-labelledby="aboutTitle">
@@ -86,8 +86,8 @@
                 <div>
                   <p class="pre-title">HELLO, I'M</p>
                   <h2 id="aboutTitle" class="display-title">Alexandru<br><span>Umbresi.</span></h2>
-                  <p class="hero-lead">I like building things that make complicated problems feel a little simpler.</p>
-                  <p class="body-copy">I'm studying Data Science at UC Berkeley, working at the intersection of software engineering, applied mathematics, and intelligent systems. I care about useful technology, thoughtful design, and understanding how things actually work.</p>
+                  <p class="hero-lead">I build at the intersection of mathematics, code, and curiosity.</p>
+                  <p class="body-copy">I'm a UC Berkeley Data Science student with a foundation in mathematics and computer science. My experience spans data science curriculum development, student research, Python data pipelines, and helping others understand quantitative ideas. I'm interested in machine learning, applied AI, and useful software.</p>
                   <div class="inline-actions">
                     <button class="outline-action" type="button" data-goto="1">EXPLORE MY EXPERIENCE <span>↗</span></button>
                     <button class="text-action" type="button" data-goto="2">SEE PROJECTS <span>→</span></button>
@@ -96,9 +96,9 @@
                 <aside class="identity-panel" aria-label="At a glance">
                   <div class="identity-art" aria-hidden="true"><div class="art-cube art-cube-a"></div><div class="art-cube art-cube-b"></div><div class="art-cross"></div><span>FIG 00 — FORM / FUNCTION</span></div>
                   <div class="identity-row"><span>01 / CURRENTLY</span><strong>UC Berkeley</strong></div>
-                  <div class="identity-row"><span>02 / STUDYING</span><strong>Data Science, B.A.</strong></div>
-                  <div class="identity-row"><span>03 / EXPLORING</span><strong>Software · AI/ML · Data</strong></div>
-                  <div class="identity-row"><span>04 / BASED IN</span><strong>Berkeley, California</strong></div>
+                  <div class="identity-row"><span>02 / DEGREE</span><strong>B.A. Data Science · May 2028</strong></div>
+                  <div class="identity-row"><span>03 / FOUNDATION</span><strong>A.S. Mathematics · GPA 3.91</strong></div>
+                  <div class="identity-row"><span>04 / FOCUS</span><strong>Python · Data · Applied AI</strong></div>
                 </aside>
               </div>
               <p class="room-tail">00 // PROFILE <span>↓ NEXT: EXPERIENCE</span></p>
@@ -113,30 +113,44 @@
             <div class="face-content">
               <div class="room-overline"><span>CHAMBER 01</span><span class="overline-divider"></span><span>EXPERIENCE & COLLABORATION</span></div>
               <div class="section-heading">
-                <div><p class="pre-title">OUTSIDE THE CLASSROOM</p><h2 id="experienceTitle" class="section-title">Learning by<br><span>doing.</span></h2></div>
-                <p class="section-intro">I’m interested in the part where ideas meet real people: understanding a problem, building something tangible, and figuring out whether it works.</p>
+                <div><p class="pre-title">RESEARCH · CURRICULUM · TEACHING</p><h2 id="experienceTitle" class="section-title">Work &<br><span>experience.</span></h2></div>
+                <p class="section-intro">Researching how teams collaborate, testing data science coursework, and making mathematics accessible to students. Practical work rooted in curiosity and careful problem-solving.</p>
               </div>
               <div class="experience-list">
                 <article class="experience-entry">
                   <div class="experience-index">01 <span class="timeline-stroke"></span></div>
                   <div class="experience-body">
-                    <div class="experience-topline"><span>UC BERKELEY · DATA DISCOVERY</span><span>FALL 2026</span></div>
-                    <h3>Collaboration behavior research</h3>
-                    <p class="entry-subtitle">Student project with Eloquia / Coeuraj</p>
-                    <p>Working with a team to investigate how meeting transcripts can support useful feedback on collaboration. Contributing to behavior definitions, annotation protocols, surveys, and evaluation workflows for communication patterns.</p>
-                    <div class="tag-list"><span>Python</span><span>Data evaluation</span><span>Human-centered AI</span><span>Research design</span></div>
+                    <div class="experience-topline"><span>UC BERKELEY · DATA DISCOVERY / ELOQUIA</span><span>SEP 2026 — PRESENT</span></div>
+                    <h3>Student Researcher</h3>
+                    <p class="entry-subtitle">Personal Performance Tracker for Group Project Work</p>
+                    <p>Research collaboration behaviors and measurable performance criteria for group projects. Work with a five-person student team and an industry mentor on evaluation methods, product requirements, UI/UX, data analysis, and iterative testing.</p>
+                    <div class="tag-list"><span>Research</span><span>Evaluation</span><span>UI/UX</span><span>Data analysis</span></div>
                   </div>
                 </article>
                 <article class="experience-entry">
                   <div class="experience-index">02 <span class="timeline-stroke"></span></div>
                   <div class="experience-body">
-                    <div class="experience-topline"><span>UC BERKELEY</span><span>2026 — PRESENT</span></div>
-                    <h3>Academic foundations & technical exploration</h3>
-                    <p class="entry-subtitle">Data Science B.A. · Software engineering focus</p>
-                    <p>Developing a foundation in programming, mathematical modeling, data analysis, and the human context of computing. Applying those ideas in collaborative projects and self-directed experiments.</p>
-                    <div class="tag-list"><span>Computer science</span><span>Statistics</span><span>Algorithms</span><span>Ethics</span></div>
+                    <div class="experience-topline"><span>LONG BEACH CITY COLLEGE · MATHEMATICS DEPARTMENT</span><span>JUN 2026 — PRESENT</span></div>
+                    <h3>Data Science Curriculum Development Assistant</h3>
+                    <p class="entry-subtitle">Adapting UC Berkeley's Data 8 curriculum</p>
+                    <p>Collaborate with mathematics faculty to adapt Data 8 for community college students. Test Jupyter notebooks, labs, homework, and projects; debug code and autograder issues; and suggest improvements to clarity and reliability.</p>
+                    <div class="tag-list"><span>Python</span><span>Jupyter</span><span>Data 8</span><span>Testing</span></div>
                   </div>
                 </article>
+                <article class="experience-entry">
+                  <div class="experience-index">03 <span class="timeline-stroke"></span></div>
+                  <div class="experience-body">
+                    <div class="experience-topline"><span>LONG BEACH CITY COLLEGE · MATH SUCCESS CENTER</span><span>JAN 2025 — PRESENT</span></div>
+                    <h3>Mathematics Tutor</h3>
+                    <p class="entry-subtitle">Algebra through differential equations and statistics</p>
+                    <p>Support college students across algebra, calculus, linear algebra, differential equations, and statistics, adapting explanations to different learning styles and building students' problem-solving confidence.</p>
+                    <div class="tag-list"><span>Mathematics</span><span>Communication</span><span>Teaching</span></div>
+                  </div>
+                </article>
+              </div>
+              <div class="resume-extras">
+                <div class="resume-extra"><span class="tiny-label">EDUCATION</span><p><strong>UC Berkeley</strong> · B.A. Data Science, expected May 2028<br><strong>Long Beach City College</strong> · A.S. Mathematics, GPA 3.91</p></div>
+                <div class="resume-extra"><span class="tiny-label">TECHNICAL TOOLKIT</span><p>Python · C++ · HTML/CSS · NumPy · Jupyter · pytest · Git/GitHub · Statistics · Linear Algebra</p></div>
               </div>
               <p class="room-tail">01 // EXPERIENCE <span>↓ NEXT: PROJECTS</span></p>
             </div>
@@ -151,7 +165,7 @@
               <div class="room-overline"><span>CHAMBER 02</span><span class="overline-divider"></span><span>SELECTED PROJECTS</span></div>
               <div class="section-heading">
                 <div><p class="pre-title">IDEAS INTO SYSTEMS</p><h2 id="projectsTitle" class="section-title">Selected<br><span>work.</span></h2></div>
-                <p class="section-intro">A few things I've been building and exploring. Some are early experiments; others are collaborative projects. All of them teach me something.</p>
+                <p class="section-intro">Applied research, financial data tooling, and collaborative prototypes. The throughline is building reliable systems, testing assumptions, and understanding how they work.</p>
               </div>
               <div class="project-grid">
                 <button class="project-card" type="button" data-project="fundpilot" aria-label="Read about FundPilot-AI">
@@ -166,11 +180,11 @@
                   <h3>Collaboration analytics</h3><p>Investigating how communication behaviors in group meetings can be identified and evaluated.</p>
                   <div class="tag-list"><span>Annotation</span><span>Python</span><span>Evaluation</span></div>
                 </button>
-                <button class="project-card" type="button" data-project="ants" aria-label="Read about Ants vs. SomeBees">
-                  <div class="project-visual project-visual-ants" aria-hidden="true"><div class="visual-hex">⬡<span>◈</span>⬡</div><span class="visual-corner">CS / 03</span></div>
-                  <div class="project-topline"><span>COURSEWORK / 2026</span><span>↗</span></div>
-                  <h3>Ants vs. SomeBees</h3><p>A turn-based strategy simulation used to explore object-oriented programming and interactions.</p>
-                  <div class="tag-list"><span>Python</span><span>OOP</span><span>CS 61A</span></div>
+                <button class="project-card" type="button" data-project="trading" aria-label="Read about Algorithmic Trading Platform">
+                  <div class="project-visual project-visual-ants" aria-hidden="true"><div class="visual-hex">⬡<span>◈</span>⬡</div><span class="visual-corner">PY / 03</span></div>
+                  <div class="project-topline"><span>PYTHON / IN PROGRESS</span><span>↗</span></div>
+                  <h3>Algorithmic Trading Platform</h3><p>A financial data pipeline with historical market data retrieval, validation, and automated tests.</p>
+                  <div class="tag-list"><span>Python</span><span>yfinance</span><span>pytest</span></div>
                 </button>
               </div>
               <p class="room-tail">02 // SELECTED WORK <span>↓ NEXT: THE LAB</span></p>
@@ -203,7 +217,7 @@
 
     <footer class="inside-footer">
       <div class="room-indicator"><span class="tiny-label">CURRENT CHAMBER</span><strong id="roomName">00 / ABOUT</strong></div>
-      <div class="drag-hint">DRAG / SWIPE / ARROW KEYS TO ROTATE <span aria-hidden="true">↔</span></div>
+      <div class="drag-hint">SCROLL TO READ · SWIPE SIDEWAYS TO ROTATE <span aria-hidden="true">↔</span></div>
       <div class="step-controls"><button id="prevRoom" type="button" aria-label="Previous chamber">←</button><span id="stepCount">01 / 04</span><button id="nextRoom" type="button" aria-label="Next chamber">→</button></div>
     </footer>
   </div>
@@ -214,6 +228,7 @@
     <h2 id="modalTitle"></h2>
     <p id="modalBody"></p>
     <div id="modalTags" class="tag-list"></div>
+    <a id="modalProjectLink" class="modal-project-link" href="https://github.com/andujp/algorithmic-trading-platform" target="_blank" rel="noopener noreferrer" hidden>VIEW SOURCE CODE ↗</a>
     <button class="outline-action" type="button" id="modalDone">BACK TO PROJECTS <span>←</span></button>
   </dialog>
 <script defer src="script.js"></script></body>
